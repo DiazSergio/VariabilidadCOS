@@ -1,4 +1,4 @@
-# Funciones adaptadas, estos procesos se realizan a partir de un SPC de entrada
+# Funciones de segmentación adaptada, estos procesos se realizan a partir de un SPC de entrada
 f0201_sliceAdaptado <- function(spc){
   # Se hace una copia de spc para trabajar sobre estey no alterar el original
   spc2 <- spc
