@@ -1,15 +1,15 @@
-#Funcion f0301 segmentacion AQP
+# Funcion f0301 segmentacion AQP
 f0301_sliceAQP <- function(spc){
   spc1 <-aqp::slice(spc1, 0:199 ~ organic_carbon)
   return(spc1)
 }
 
-# funcion f0302 cálculo de agregación AQP
+# Funcion f0302 cÃ¡lculo de agregacion AQP
 f0302_agregacionAQP <- function(spc){
   # Parte 1 Analisis de agregacion. devuelve un dataframe con los calculos por segmento
   aggAQP <- aqp::slab(spc, fm= ~ organic_carbon)
   
-  #Renombrar la columna que sale en el encabezado del grafico
+  #Renombrar la columna de encabezado del grafico
   #aggAQP$variable <- "Variabilidad  vertical  del  Carbono  organico usando AQP" 
   
   # Parte 2, plotear 
