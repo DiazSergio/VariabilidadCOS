@@ -1,6 +1,6 @@
 # Funcion f0301 segmentacion AQP
 f0301_sliceAQP <- function(spc){
-  spc1 <-aqp::slice(spc1, 0:199 ~ organic_carbon)
+  spc1 <-aqp::slice(spc, 0:199 ~ organic_carbon)
   return(spc1)
 }
 
