@@ -281,8 +281,10 @@ f0105_crearSPC <- function(json, inconsistencias){
                  json$properties.country_code)
   sites <- as.data.frame(sites)
   
-  # Renombrar las columnas de sites
+  # Renombrar las columnas de sites y convertimos los factores en numericos
   names(sites) <- c('profile_id', 'identifier', 'X', 'Y', 'country_code')
+  sites$X <-as.numeric(levels(sites$X))[sites$X]
+  sites$Y <-as.numeric(levels(sites$Y))[sites$Y]
   
   # Extraccion de los horizontes de los perfiles en otro datadfame.
   spc <- do.call(rbind, json$properties.layers)
@@ -302,7 +304,7 @@ f0105_crearSPC <- function(json, inconsistencias){
     site(spc) <- sites
     
     # Agregar coordenadas
-    coordinates(spc) <- ~ X + Y
+    coordinates(spc) <- ~ X+Y
     
     return(spc)
   } else {
